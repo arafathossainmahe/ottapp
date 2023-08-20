@@ -12,7 +12,7 @@ class CustomSearchBar extends StatelessWidget {
       height: 50.h,
       decoration: ShapeDecoration(
         gradient:
-        LinearGradient(colors: [Colors.black54, Colors.grey.shade800]),
+        LinearGradient(colors: [Colors.black54, Colors.grey.shade900]),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5)),
       ),
