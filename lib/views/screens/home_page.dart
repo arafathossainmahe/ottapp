@@ -25,12 +25,20 @@ class _HomePageState extends State<HomePage> {
     "Avengers ENDGAME"
   ];
 
-  List<AssetImage> images = [
+  List<AssetImage> sliderImages = [
     AssetImage('assets/images/movie_11.jpg'),
     AssetImage('assets/images/movie_12.jpg'),
     AssetImage('assets/images/movie_13.jpg'),
     AssetImage('assets/images/movie_14.jpg'),
   ];
+
+  List<AssetImage> hollywoodImages = [
+    AssetImage('assets/images/movie_11.jpg'),
+    AssetImage('assets/images/movie_12.jpg'),
+    AssetImage('assets/images/movie_13.jpg'),
+    AssetImage('assets/images/movie_14.jpg'),
+  ];
+
   int current = 0;
   int currentMovie = 0;
   CarouselController controller = CarouselController();
@@ -103,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: images[index], fit: BoxFit.fill),
+                              image: sliderImages[index], fit: BoxFit.fill),
                           borderRadius: BorderRadius.circular(20)),
                     ),
                     Container(
@@ -194,12 +202,51 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.blue),
                           )
                         : CircleAvatar(
-                            backgroundColor: Colors.grey,
+                            backgroundColor: Colors.grey[700],
                             radius: 4,
                           ),
                   );
                 }),
           ),
+
+
+          //Movie Type
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Hollywood',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400)),
+                Text('See all',
+                    style: TextStyle(color: Colors.indigoAccent, fontSize: 16)),
+              ],
+            ),
+          ),
+
+
+          //Movie list
+          SizedBox(
+            height: 220,
+            child: ListView.builder(
+                itemCount: 14,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+              return Container(
+                width: 140,
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/movie_$index.jpg'),
+                        fit: BoxFit.cover)),
+              );
+            }),
+          )
+
         ],
       ),
     );
