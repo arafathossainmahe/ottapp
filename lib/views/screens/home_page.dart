@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,7 +17,23 @@ class _HomePageState extends State<HomePage> {
     "Youtube",
     "Trailers"
   ];
+
+  List<String> movieName = [
+    "Avengers",
+    "Avengers Age of Ultron",
+    "Avengers Infinite War",
+    "Avengers ENDGAME"
+  ];
+
+  List<AssetImage> images = [
+    AssetImage('assets/images/movie_11.jpg'),
+    AssetImage('assets/images/movie_12.jpg'),
+    AssetImage('assets/images/movie_13.jpg'),
+    AssetImage('assets/images/movie_14.jpg'),
+  ];
   int current = 0;
+  int currentMovie = 0;
+  CarouselController controller = CarouselController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +51,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Container(
+          // Category Tab View
+          SizedBox(
             height: 70,
             child: ListView.builder(
                 shrinkWrap: true,
@@ -71,7 +89,117 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ));
                 }),
-          )
+          ),
+          SizedBox(height: 20),
+
+
+          //Image Slider
+          CarouselSlider.builder(
+              carouselController: controller,
+              itemCount: movieName.length,
+              itemBuilder: (context, index, page) {
+                return Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: images[index], fit: BoxFit.fill),
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [Colors.black, Colors.transparent])),
+                    ),
+                    Positioned(
+                      bottom: 1,
+                      left: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(movieName[index],
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w600)),
+                            Text('Superhero, Action',
+                                style: TextStyle(
+                                    color: Colors.grey, fontSize: 16)),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 1,
+                      right: 1,
+                      child: Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.black),
+                          width: 70,
+                          height: 20,
+                          child: Row(
+                            children: [
+                              Image.asset('assets/images/imdb.jpg'),
+                              SizedBox(width: 5),
+                              Text('8.5',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                );
+              },
+              options: CarouselOptions(
+                  onPageChanged: (val, _) {
+                    setState(() {
+                      currentMovie = val;
+                    });
+                  },
+                  height: 230,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  viewportFraction: 0.9)),
+          SizedBox(height: 10),
+
+
+          // Slider Indication
+          SizedBox(
+            height: 15,
+            child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemCount: movieName.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: currentMovie == index
+                        ? Container(
+                            width: 15,
+                            height: 6,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.blue),
+                          )
+                        : CircleAvatar(
+                            backgroundColor: Colors.grey,
+                            radius: 4,
+                          ),
+                  );
+                }),
+          ),
         ],
       ),
     );
