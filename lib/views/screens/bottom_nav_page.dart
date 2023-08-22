@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:ottapp/Favourite/Favourite_UI.dart';
 import 'package:ottapp/views/screens/discover_new_page.dart';

@@ -25,12 +25,6 @@ class _HomePageState extends State<HomePage> {
     "Avengers ENDGAME"
   ];
 
-  List<AssetImage> sliderImages = [
-    AssetImage('assets/images/movie_11.jpg'),
-    AssetImage('assets/images/movie_12.jpg'),
-    AssetImage('assets/images/movie_13.jpg'),
-    AssetImage('assets/images/movie_14.jpg'),
-  ];
   int current = 0;
   int currentMovie = 0;
   int currentPage = 0;
@@ -105,7 +99,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: sliderImages[index], fit: BoxFit.fill),
+                                image: AssetImage('assets/images/movie_slider_$index.jpg'), fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(20)),
                       ),
                       Container(

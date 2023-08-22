@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           canvasColor: Colors.grey[900]
         ),
-        home: My_Favourite(),
+        home: OTTBottomNav(),
       ); },
     );
   }

@@ -8,61 +8,72 @@ class Movies extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: 15,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Card(
-              elevation: 2,
-              color: Color.fromARGB(255, 39, 37, 37),
-              child: ListTile(
-                contentPadding: EdgeInsets.all(18.0),
-                leading: Container(
-                  width: 100,
-                  height: 500,
-                  // decoration: BoxDecoration(
-                  //   image: DecorationImage(
-                  //     image: AssetImage('assets/images/Aven.jpeg'), fit:
-                  //   )
-                  // ),
-                  child: Image.asset(
-                    '',
-                    alignment: Alignment.center,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                title: Text(
-                  'Avengers: End Game',
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        _ActionRatingButton('Action'),
-                        SizedBox(width: 8),
-                        _ActionRatingButton('⭐ 8.7'),
-                      ],
-                    ),
-                    Text(
-                      'Time: 2H37M',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-                trailing: IconButton(
-                  iconSize: 20,
-                  color: Colors.white,
-                  icon: Icon(Icons.more_vert),
-                  onPressed: () {},
-                ),
-              ),
-            ),
-          );
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Card(
+                  elevation: 2,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  color: Color.fromARGB(255, 39, 37, 37),
+                  child: SizedBox(
+                      height: 150,
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              flex: 3,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/movie_$index.jpg'),
+                                          fit: BoxFit.fill)),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Avengers: End Game',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Row(
+                                    children: [
+                                      _ActionRatingButton('Action'),
+                                      SizedBox(width: 8),
+                                      _ActionRatingButton('⭐ 8.7'),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'Time: 2H37M',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Expanded(
+                                flex: 1,
+                                child: IconButton(
+                                  color: Colors.white,
+                                  icon: Icon(Icons.more_vert),
+                                  onPressed: () {},
+                                ))
+                          ]))));
         },
       ),
     );

@@ -33,7 +33,7 @@ class CategoryHorizontalListView extends StatelessWidget {
                 decoration: ShapeDecoration(
                   image:DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/spidey.jpg")
+                      image: AssetImage("assets/images/movie_$index.jpg")
                   ), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),)
             );
           },separatorBuilder: (BuildContext context, int index){
