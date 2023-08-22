@@ -1,7 +1,6 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:ottapp/Favourite/Favourite_UI.dart';
+import 'package:ottapp/views/screens/content_info_page.dart';
 import 'package:ottapp/views/screens/discover_new_page.dart';
 import 'package:ottapp/views/screens/home_page.dart';
 
@@ -14,7 +13,7 @@ class OTTBottomNav extends StatefulWidget {
 
 class _OTTBottomNavState extends State<OTTBottomNav> {
   int pageIndex = 0;
-  var pages = [HomePage(), DiscoverNewPage(), My_Favourite()];
+  var pages = [HomePage(), DiscoverNewPage(),ContentInfoPage()];
 
   @override
   Widget build(BuildContext context) {

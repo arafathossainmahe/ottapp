@@ -72,9 +72,9 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
+                                borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                    width: 1, color: Colors.grey.shade900),
+                                    width: 0.5, color: Colors.grey.shade900),
                                 gradient: LinearGradient(
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
