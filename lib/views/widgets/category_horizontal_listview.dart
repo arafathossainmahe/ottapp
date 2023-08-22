@@ -23,21 +23,21 @@ class CategoryHorizontalListView extends StatelessWidget {
       ),
       SizedBox(height: 8.h,),
       SizedBox(
-        height: 180.h,
-        child: ListView.separated(itemCount: 9,
+        height: 220.h,
+        child: ListView.separated(itemCount: 14,
           scrollDirection: Axis.horizontal,
           shrinkWrap: true,
           itemBuilder: (BuildContext context, int index){
             return Container(
-                width: 130.w,
+                width: 140.w,
                 decoration: ShapeDecoration(
                   image:DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/spidey.jpg")
-                  ), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),)
+                      image: AssetImage("assets/images/movie_$index.jpg")
+                  ), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.r)),)
             );
           },separatorBuilder: (BuildContext context, int index){
-            return SizedBox(width: 10.w,);
+            return SizedBox(width: 16.w,);
           },),
       ),
 

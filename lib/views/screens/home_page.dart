@@ -74,19 +74,19 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                                 border: Border.all(
-                                    width: 1, color: Colors.grey.shade800),
+                                    width: 1, color: Colors.grey.shade900),
                                 gradient: LinearGradient(
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
                                     colors: current == index
                                         ? [Colors.blue, Colors.blue]
-                                        : [Colors.black, Colors.grey.shade800])),
+                                        : [Colors.black, Colors.grey.shade900])),
                             child: Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Center(
                                   child: Text(category[index],
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.white))),
+                                          fontSize: 14, color: current == index?Colors.white:Colors.grey))),
                             ),
                           ),
                         ));
