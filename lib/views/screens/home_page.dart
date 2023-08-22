@@ -42,10 +42,10 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text("ZETTA",
+        title: Text("ZETTA",
             style: TextStyle(
                 fontSize: 28, color: Colors.blue, fontWeight: FontWeight.w900)),
-        actions: const [
+        actions: [
           Icon(Icons.search_rounded, size: 35, color: Colors.white),
           SizedBox(width: 10)
         ],
@@ -281,36 +281,7 @@ class _HomePageState extends State<HomePage> {
 
           ],
         ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30)
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: BottomNavigationBar(
-              onTap: (value) {
-                currentPage = value;
-              },
-              currentIndex: currentPage,
-              iconSize: 25,
-              selectedItemColor: Colors.blue,
-              unselectedItemColor: Colors.grey,
-              showUnselectedLabels: false,
-              showSelectedLabels: false,
-              items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.compass_calibration_rounded), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-              ],
-            ),
-          ),
-        ),
-      ),
-      extendBody: true,
+      )
     );
   }
 }
