@@ -20,10 +20,15 @@ class Movies extends StatelessWidget {
                 leading: Container(
                   width: 100,
                   height: 500,
+                  // decoration: BoxDecoration(
+                  //   image: DecorationImage(
+                  //     image: AssetImage('assets/images/Aven.jpeg'), fit:
+                  //   )
+                  // ),
                   child: Image.asset(
-                    'assets/images/Aven.jpeg',
+                    '',
                     alignment: Alignment.center,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
                 title: Text(
