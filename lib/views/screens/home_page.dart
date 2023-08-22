@@ -281,36 +281,7 @@ class _HomePageState extends State<HomePage> {
 
           ],
         ),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30)
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: BottomNavigationBar(
-              onTap: (value) {
-                currentPage = value;
-              },
-              currentIndex: currentPage,
-              iconSize: 25,
-              selectedItemColor: Colors.blue,
-              unselectedItemColor: Colors.grey,
-              showUnselectedLabels: false,
-              showSelectedLabels: false,
-              items: [
-                BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.compass_calibration_rounded), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ''),
-                BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
-              ],
-            ),
-          ),
-        ),
-      ),
-      extendBody: true,
+      )
     );
   }
 }
