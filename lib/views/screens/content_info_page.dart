@@ -18,7 +18,7 @@ class ContentInfoPage extends StatelessWidget {
             SliverAppBar(
 
               backgroundColor: Colors.black,
-              leading: Icon(
+              leading: const Icon(
                 CupertinoIcons.back,
                 color: Colors.white,
               ),
@@ -40,7 +40,7 @@ class ContentInfoPage extends StatelessWidget {
                       ),
                     ),
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage(
@@ -76,7 +76,7 @@ class ContentInfoPage extends StatelessWidget {
                   height: 80.h,
                   child: ListView.separated(
                       scrollDirection: Axis.horizontal,
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) {
                         return Chip(
@@ -111,7 +111,7 @@ class ContentInfoPage extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Text(
+                    const Text(
                       "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
                       " Lorem Ipsum has been the industry's standard dummy text "
                       "ever since the 1500s, when an unknown printer took a galley "
@@ -158,7 +158,7 @@ class ContentInfoPage extends StatelessWidget {
                                 SizedBox(
                                   height: 2.h,
                                 ),
-                                Text(
+                                const Text(
                                   "Spidey",
                                   style: TextStyle(color: Colors.grey),
                                 ),
@@ -180,7 +180,7 @@ class ContentInfoPage extends StatelessWidget {
               child: Padding(
                 padding:
                     EdgeInsets.only(left: 16.0.w, right: 16.0.w, bottom: 100.h),
-                child: CategoryHorizontalListView(
+                child: const CategoryHorizontalListView(
                   categoryTitle: "Recommended for you",
                 ),
               ),

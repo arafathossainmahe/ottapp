@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ottapp/Favourite/Favourite_UI.dart';
+//import 'package:ottapp/Favourite/Favourite_UI.dart';
 import 'package:ottapp/views/screens/content_info_page.dart';
 import 'package:ottapp/views/screens/discover_new_page.dart';
 import 'package:ottapp/views/screens/home_page.dart';
@@ -13,7 +13,7 @@ class OTTBottomNav extends StatefulWidget {
 
 class _OTTBottomNavState extends State<OTTBottomNav> {
   int pageIndex = 0;
-  var pages = [HomePage(), DiscoverNewPage(),ContentInfoPage()];
+  var pages = [const HomePage(), const DiscoverNewPage(),ContentInfoPage()];
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class _OTTBottomNavState extends State<OTTBottomNav> {
               unselectedItemColor: Colors.grey,
               showUnselectedLabels: false,
               showSelectedLabels: false,
-              items: [
+              items: const [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.home_filled), label: ''),
                 BottomNavigationBarItem(
