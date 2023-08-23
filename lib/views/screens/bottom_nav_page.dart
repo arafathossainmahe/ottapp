@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:ottapp/Favourite/Favourite_UI.dart';
@@ -14,7 +13,7 @@ class OTTBottomNav extends StatefulWidget {
 
 class _OTTBottomNavState extends State<OTTBottomNav> {
   int pageIndex = 0;
-  var pages = [HomePage(), DiscoverNewPage(), My_Favourite()];
+  var pages = [const HomePage(), const DiscoverNewPage(), const My_Favourite()];
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class _OTTBottomNavState extends State<OTTBottomNav> {
               unselectedItemColor: Colors.grey,
               showUnselectedLabels: false,
               showSelectedLabels: false,
-              items: [
+              items: const [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.home_filled), label: ''),
                 BottomNavigationBarItem(

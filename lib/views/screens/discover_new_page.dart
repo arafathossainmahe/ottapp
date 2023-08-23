@@ -38,23 +38,23 @@ class DiscoverNewPage extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Hollywood"),
+              const CategoryHorizontalListView(categoryTitle: "Hollywood"),
               //WebSeries
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Web Series"),
+              const CategoryHorizontalListView(categoryTitle: "Web Series"),
               //Bollywood
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Bollywood"),
+              const CategoryHorizontalListView(categoryTitle: "Bollywood"),
               //TvShows
               SizedBox(height: 20.h,),
-              CategoryHorizontalListView(categoryTitle: "Tv Shows"),
+              const CategoryHorizontalListView(categoryTitle: "Tv Shows"),
               //Sports
               SizedBox(height: 20.h,),
-              CategoryHorizontalListView(categoryTitle: "Sports")
+              const CategoryHorizontalListView(categoryTitle: "Sports")
             ],
           ),
         ),
