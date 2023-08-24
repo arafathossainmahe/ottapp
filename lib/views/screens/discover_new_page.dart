@@ -9,6 +9,16 @@ class DiscoverNewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Text(
+        "Discover New",
+        style: TextStyle(
+            color: Colors.white,
+            fontSize: 24.sp,
+            fontWeight: FontWeight.bold),
+      ),),
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Padding(
@@ -17,18 +27,6 @@ class DiscoverNewPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 20.h,
-              ),
-              //Discover_New
-              Text(
-                "Discover New",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.bold),
-              ),
-
               //Search_Bar
               SizedBox(
                 height: 20.h,
@@ -38,23 +36,23 @@ class DiscoverNewPage extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Hollywood"),
+              const CategoryHorizontalListView(categoryTitle: "Hollywood"),
               //WebSeries
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Web Series"),
+              const CategoryHorizontalListView(categoryTitle: "Web Series"),
               //Bollywood
               SizedBox(
                 height: 20.h,
               ),
-              CategoryHorizontalListView(categoryTitle: "Bollywood"),
+              const CategoryHorizontalListView(categoryTitle: "Bollywood"),
               //TvShows
               SizedBox(height: 20.h,),
-              CategoryHorizontalListView(categoryTitle: "Tv Shows"),
+              const CategoryHorizontalListView(categoryTitle: "Tv Shows"),
               //Sports
               SizedBox(height: 20.h,),
-              CategoryHorizontalListView(categoryTitle: "Sports")
+              const CategoryHorizontalListView(categoryTitle: "Sports")
             ],
           ),
         ),

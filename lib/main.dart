@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ottapp/views/screens/discover_new_page.dart';
+import 'package:ottapp/views/screens/bottom_nav_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -25,8 +26,9 @@ class MyApp extends StatelessWidget {
           ),
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
+          canvasColor: Colors.grey[900]
         ),
-        home: const DiscoverNewPage(),
+        home:const OTTBottomNav(),
       ); },
     );
   }
