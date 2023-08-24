@@ -98,17 +98,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_screenutil
-<<<<<<< HEAD
-      sha256: "1b61f8c4cbf965104b6ca7160880ff1af6755aad7fec70b58444245132453745"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.8.4"
-=======
       sha256: "8cf100b8e4973dc570b6415a2090b0bfaa8756ad333db46939efc3e774ee100d"
       url: "https://pub.dev"
     source: hosted
     version: "5.9.0"
->>>>>>> 23f38502584b0b916678d5e8e60fae4ee9a83429
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -138,17 +131,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
-<<<<<<< HEAD
-=======
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
->>>>>>> 23f38502584b0b916678d5e8e60fae4ee9a83429
   lints:
     dependency: transitive
     description:
@@ -347,9 +329,5 @@ packages:
     source: hosted
     version: "1.0.2"
 sdks:
-<<<<<<< HEAD
   dart: ">=3.1.0-185.0.dev <4.0.0"
-=======
-  dart: ">=3.0.6 <4.0.0"
->>>>>>> 23f38502584b0b916678d5e8e60fae4ee9a83429
   flutter: ">=3.10.0"

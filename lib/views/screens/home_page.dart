@@ -25,6 +25,12 @@ class _HomePageState extends State<HomePage> {
     "Avengers ENDGAME"
   ];
 
+  List<AssetImage> sliderImages = [
+    const AssetImage('assets/images/movie_11.jpg'),
+    const AssetImage('assets/images/movie_12.jpg'),
+    const AssetImage('assets/images/movie_13.jpg'),
+    const AssetImage('assets/images/movie_14.jpg'),
+  ];
   int current = 0;
   int currentMovie = 0;
   int currentPage = 0;
@@ -36,10 +42,10 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text("ZETTA",
+        title: const Text("ZETTA",
             style: TextStyle(
                 fontSize: 28, color: Colors.blue, fontWeight: FontWeight.w900)),
-        actions: [
+        actions: const [
           Icon(Icons.search_rounded, size: 35, color: Colors.white),
           SizedBox(width: 10)
         ],
@@ -53,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   itemCount: category.length,
                   itemBuilder: (context, index) {
                     return Padding(
@@ -66,27 +72,27 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
+                                borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
-                                    width: 1, color: Colors.grey.shade800),
+                                    width: 0.5, color: Colors.grey.shade900),
                                 gradient: LinearGradient(
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
                                     colors: current == index
                                         ? [Colors.blue, Colors.blue]
-                                        : [Colors.black, Colors.grey.shade800])),
+                                        : [Colors.black, Colors.grey.shade900])),
                             child: Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: Center(
                                   child: Text(category[index],
                                       style: TextStyle(
-                                          fontSize: 14, color: Colors.white))),
+                                          fontSize: 14, color: current == index?Colors.white:Colors.grey))),
                             ),
                           ),
                         ));
                   }),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
 
             //Image Slider
@@ -99,11 +105,11 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         decoration: BoxDecoration(
                             image: DecorationImage(
-                                image: AssetImage('assets/images/movie_slider_$index.jpg'), fit: BoxFit.fill),
+                                image: sliderImages[index], fit: BoxFit.fill),
                             borderRadius: BorderRadius.circular(20)),
                       ),
                       Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             gradient: LinearGradient(
                                 begin: Alignment.bottomCenter,
                                 end: Alignment.topCenter,
@@ -118,11 +124,11 @@ class _HomePageState extends State<HomePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(movieName[index],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600)),
-                              Text('Superhero, Action',
+                              const Text('Superhero, Action',
                                   style: TextStyle(
                                       color: Colors.grey, fontSize: 16)),
                             ],
@@ -143,8 +149,8 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               children: [
                                 Image.asset('assets/images/imdb.jpg'),
-                                SizedBox(width: 5),
-                                Text('8.5',
+                                const SizedBox(width: 5),
+                                const Text('8.5',
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
                               ],
@@ -166,9 +172,9 @@ class _HomePageState extends State<HomePage> {
                     autoPlay: true,
                     autoPlayCurve: Curves.fastOutSlowIn,
                     enableInfiniteScroll: true,
-                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 800),
                     viewportFraction: 0.9)),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
 
             // Slider Indication
@@ -199,8 +205,8 @@ class _HomePageState extends State<HomePage> {
 
 
             //Movie Type
-            Padding(
-              padding: const EdgeInsets.all(16),
+            const Padding(
+              padding: EdgeInsets.all(16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -225,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                 return Container(
                   width: 140,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
@@ -237,8 +243,8 @@ class _HomePageState extends State<HomePage> {
 
 
             //Movie Type
-            Padding(
-              padding: const EdgeInsets.all(16),
+            const Padding(
+              padding: EdgeInsets.all(16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -263,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                   itemBuilder: (context, index) {
                     return Container(
                       width: 140,
-                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
